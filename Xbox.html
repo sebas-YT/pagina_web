@@ -3,95 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xbox Consoles</title>
+    <title>Xbox Store</title>
     <link rel="stylesheet" href="xbox.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .cart {
+            position: relative;
+            display: inline-block;
+        }
+        #cart-icon {
+            font-size: 24px;
+            text-decoration: none;
+            color: #fff;
+            background: #ff6600;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+        .cart-dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            background: white;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 200px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .cart:hover .cart-dropdown {
+            display: block;
+        }
+
+        .cart-dropdown button {
+            background: #ff6600;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Xbox Consoles</h1>
-        <nav>
-            <a href="index.html" aria-label="Ir a la página principal">Inicio</a>
-            <a href="PlayStation.html" aria-label="Explorar consolas PlayStation">PlayStation</a>
-            <a href="Nintendo.html" aria-label="Explorar consolas Nintendo">Nintendo</a>
-        </nav>
+    <header class="header">
+        <div class="menu container">
+            <a href="#" class="logo">Xbox Store</a>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="PlayStation.html">PlayStation</a></li>
+                    <li><a href="Nintendo.html">Nintendo</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="cart">
+                <a href="#" id="cart-icon">🛒 <span id="cart-count">0</span></a>
+                <div class="cart-dropdown">
+                    <ul id="cart-items"></ul>
+                    <p>Total: $<span id="cart-total">0</span></p>
+                    <button onclick="clearCart()">Vaciar Carrito</button>
+                </div>
+            </div>
+        </div>
     </header>
+    
+    <main class="product container">
+        <h2>Consolas Xbox</h2>
+        <div class="product-1" data-name="Xbox Series X" data-price="500">
+            <img src="img/xbox_serie_x.jpg" alt="Xbox Series X">
+            <h3>Xbox Series X</h3>
+            <p>$500</p>
+            <button class="btn-2 add-to-cart">Comprar</button>
+        </div>
+        <div class="product-1" data-name="Xbox Series S" data-price="300">
+            <img src="img/Xbox_serie_s.jpg" alt="Xbox Series S">
+            <h3>Xbox Series S</h3>
+            <p>$300</p>
+            <button class="btn-2 add-to-cart">Comprar</button>
+        </div>
 
-    <section class="banner">
-        <h2>La potencia del juego en cada generación</h2>
-    </section>
+        <div class="product-1" data-name="Xbox One X" data-price="300">
+            <img src="img/xbox_one_x.jpg" alt="Xbox Series S">
+            <h3>Xbox Series S</h3>
+            <p>$300</p>
+            <button class="btn-2 add-to-cart">Comprar</button>
+        </div>
 
-    <main class="content">
-        <h3>Explore Xbox Consoles</h3>
-        <div class="cards">
-            <article class="card">
-                <img src="img/xbox_serie_x.jpg" alt="Xbox Series X con diseño de torre vertical">
-                <div class="card-content">
-                    <h4>Xbox Series X</h4>
-                    <p>La Xbox Series X es la consola más potente, con gráficos 4K nativos, carga ultrarrápida y soporte para ray tracing, brindando la mejor experiencia de juego hasta la fecha.</p>
-                </div>
-            </article>
+        <div class="product-1" data-name="Xbox One S" data-price="300">
+            <img src="img/xbox_one_s.jpg" alt="Xbox Series S">
+            <h3>Xbox Series S</h3>
+            <p>$300</p>
+            <button class="btn-2 add-to-cart">Comprar</button>
+        </div>
 
-            <article class="card">
-                <img src="img/Xbox_serie_s.jpg" alt="Xbox Series S de color blanco con diseño compacto">
-                <div class="card-content">
-                    <h4>Xbox Series S</h4>
-                    <p>La Xbox Series S ofrece un rendimiento increíble en una consola compacta, con resolución 1440p y soporte para hasta 120 FPS, todo a un precio más accesible.</p>
-                </div>
-            </article>
+        <div class="product-1" data-name="Xbox One clasica" data-price="300">
+            <img src="img/xbox_one_clasica.webp" alt="Xbox Series S">
+            <h3>Xbox Series S</h3>
+            <p>$300</p>
+            <button class="btn-2 add-to-cart">Comprar</button>
+        </div>
 
-            <article class="card">
-                <img src="img/xbox_one_x.jpg" alt="Xbox One X con diseño negro elegante">
-                <div class="card-content">
-                    <h4>Xbox One X</h4>
-                    <p>La Xbox One X es la consola más poderosa de la familia Xbox One, ofreciendo gráficos 4K y rendimiento superior para los jugadores que buscan calidad visual y potencia.</p>
-                </div>
-            </article>
+        <div class="product-1" data-name="Xbox 369 Elite" data-price="300">
+            <img src="img/Xbox_360_Elite.jpg" alt="Xbox Series S">
+            <h3>Xbox Series S</h3>
+            <p>$300</p>
+            <button class="btn-2 add-to-cart">Comprar</button>
+        </div>
 
-            <article class="card">
-                <img src="img/xbox_one_s.jpg" alt="Xbox One S con diseño blanco y compacto">
-                <div class="card-content">
-                    <h4>Xbox One S</h4>
-                    <p>La Xbox One S ofrece un diseño más compacto y un rendimiento mejorado, con soporte para HDR y la capacidad de reproducir Blu-ray en 4K.</p>
-                </div>
-            </article>
+        <div class="product-1" data-name="Xbox 360 Slim" data-price="300">
+            <img src="img/Xbox_360_Slim.jpg" alt="Xbox Series S">
+            <h3>Xbox Series S</h3>
+            <p>$300</p>
+            <button class="btn-2 add-to-cart">Comprar</button>
+        </div>
 
-            <article class="card">
-                <img src="img/xbox_one_clasica.webp" alt="Xbox One en diseño clásico negro">
-                <div class="card-content">
-                    <h4>Xbox One</h4>
-                    <p>La Xbox One es la consola de entretenimiento todo-en-uno de Microsoft, ofreciendo un amplio catálogo de juegos, aplicaciones y servicios de streaming.</p>
-                </div>
-            </article>
-
-            <article class="card">
-                <img src="img/xbox_one_clasica.webp" alt="Xbox 360 Elite con diseño elegante negro">
-                <div class="card-content">
-                    <h4>Xbox 360 Elite</h4>
-                    <p>La Xbox 360 Elite ofrece una gran variedad de juegos, junto con un diseño elegante y un disco duro de 120GB para almacenar juegos y medios.</p>
-                </div>
-            </article>
-
-            <article class="card">
-                <img src="img/Xbox_360_Slim.jpg" alt="Xbox 360 Slim con diseño más pequeño y moderno">
-                <div class="card-content">
-                    <h4>Xbox 360 Slim</h4>
-                    <p>La versión Slim de la Xbox 360 mejora en diseño y rendimiento, con una unidad más silenciosa y un diseño más compacto.</p>
-                </div>
-            </article>
-
-            <article class="card">
-                <img src="img/Xbox_360.jpg" alt="Xbox 360 clásica con diseño original">
-                <div class="card-content">
-                    <h4>Xbox 360</h4>
-                    <p>La Xbox 360, famosa por su enorme biblioteca de juegos, revolucionó la forma en que jugamos en línea, con Xbox Live y una gran variedad de títulos exclusivos.</p>
-                </div>
-            </article>
+        <div class="product-1" data-name="Xbox 360 clasica" data-price="300">
+            <img src="img/Xbox_360.jpg" alt="Xbox Series S">
+            <h3>Xbox Series S</h3>
+            <p>$300</p>
+            <button class="btn-2 add-to-cart">Comprar</button>
         </div>
     </main>
-
-    <footer>
-        <p>&copy; 2025 Gaming World. All Rights Reserved.</p>
+    
+    <section class="contac container">
+        <div class="contac-content">
+            <h3>Suscríbete a nuestro blog</h3>
+            <form>
+                <input type="email" placeholder="Escribe tu correo">
+                <input type="submit" class="btn-3" value="Enviar">
+            </form>
+        </div>
+    </section>
+    
+    <footer class="footer container">
+        <p>&copy; 2025 Xbox Store. Todos los derechos reservados.</p>
     </footer>
+    
+    <script>
+        let cart = [];
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function () {
+                let product = this.closest('.product-1');
+                let name = product.getAttribute('data-name');
+                let price = parseFloat(product.getAttribute('data-price'));
+                cart.push({ name, price });
+                updateCart();
+            });
+        });
+        function updateCart() {
+            let cartItems = document.getElementById('cart-items');
+            let cartTotal = document.getElementById('cart-total');
+            let cartCount = document.getElementById('cart-count');
+            cartItems.innerHTML = '';
+            let total = 0;
+            cart.forEach(item => {
+                let li = document.createElement('li');
+                li.textContent = `${item.name} - $${item.price}`;
+                cartItems.appendChild(li);
+                total += item.price;
+            });
+            cartTotal.textContent = total;
+            cartCount.textContent = cart.length;
+        }
+        function clearCart() {
+            cart = [];
+            updateCart();
+        }
+    </script>
 </body>
 </html>

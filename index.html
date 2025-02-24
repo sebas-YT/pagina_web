@@ -6,6 +6,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>pagina</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .cart {
+            position: relative;
+            display: inline-block;
+        }
+
+        #cart-icon {
+            font-size: 24px;
+            text-decoration: none;
+            color: #fff;
+            background: #ff6600;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .cart-dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            background: white;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 200px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .cart:hover .cart-dropdown {
+            display: block;
+        }
+
+        #cart-items {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            max-height: 150px;
+            overflow-y: auto;
+        }
+
+        #cart-items li {
+            padding: 5px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .cart-dropdown p {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .cart-dropdown button {
+            background: #ff6600;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 
 <body>
@@ -25,15 +84,25 @@
                     <li><a href="#">Contacto</a></li>
                 </ul>
             </nav>
+            <div class="cart">
+                <a href="#" id="cart-icon">🛒 <span id="cart-count">0</span></a>
+                <div class="cart-dropdown">
+                    <ul id="cart-items"></ul>
+                    <p>Total: $<span id="cart-total">0</span></p>
+                    <button onclick="clearCart()">Vaciar Carrito</button>
+                </div>
+            </div>
         </div>
 
         <div class="header-content container">
             <div class="header-txt">
                 <h1>Compra tu <span>Juego</span> <br> Favorito aqui</h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Quibusdam eius aperiam necessitatibus nulla quam? Beatae,
-                    enim iusto aliquam minima ipsum incidunt accusantium consequatur
-                    voluptatum odio ipsam, totam molestiae, obcaecati dicta.
+                <p>"Bienvenido a nuestra tienda, el lugar ideal para los
+                     amantes de los videojuegos. Descubre una amplia variedad
+                      de consolas, títulos exclusivos y accesorios de alta calidad.
+                       Ya seas un jugador experimentado o estés comenzando tu aventura,
+                        tenemos todo lo que necesitas para disfrutar de la mejor experiencia.
+                         ¡Explora, elige y lleva tu pasión al siguiente nivel!"
                 </p>
                 <div class="butons">
                     <a href="#" class="btn-1">Informacion</a>
@@ -44,153 +113,180 @@
     </header>
 
     <section class="popular container">
-
-        <h2>Juegos Pooulares</h2>
-
+        <h2>Juegos Populares</h2>
         <div class="popular-content">
             <img src="images/g1.jpg" alt="">
-            <img src="images/g2.jpg." alt="">
-            <img src="images/g3.jpg." alt="">
+            <img src="images/g2.jpg" alt="">
+            <img src="images/g3.jpg" alt="">
             <img src="images/g4.jpg" alt="">
             <img src="images/g5.jpg" alt="">
             <img src="images/g6.jpg" alt="">
             <img src="images/g7.jpg" alt="">
-
-
         </div>
     </section>
 
     <main class="product container">
-        <h2>tdos los Juegos</h2>
-        <div class="product-1">
+        <h2>Todos los Juegos</h2>
+        <div class="product-1" data-name="Juego lorem" data-price="500">
             <img src="images/l1.jpg" alt="">
             <div class="product-txt">
                 <h3>Juego lorem</h3>
                 <div class="price">
                     <p>$500</p>
-                    <a href="#" class="btn-2">Comprar</a>
+                    <button class="btn-2 add-to-cart">Comprar</button>
                 </div>
             </div>
         </div>
 
-        <div class="product-1">
+        <div class="product-1" data-name="Juego lorem" data-price="500">
             <img src="images/l2.jpg" alt="">
             <div class="product-txt">
                 <h3>Juego lorem</h3>
                 <div class="price">
                     <p>$500</p>
-                    <a href="#" class="btn-2">Comprar</a>
+                    <button class="btn-2 add-to-cart">Comprar</button>
                 </div>
             </div>
         </div>
 
-        <div class="product-1">
+        <div class="product-1" data-name="Juego lorem" data-price="500">
             <img src="images/l3.jpg" alt="">
             <div class="product-txt">
                 <h3>Juego lorem</h3>
                 <div class="price">
                     <p>$500</p>
-                    <a href="#" class="btn-2">Comprar</a>
+                    <button class="btn-2 add-to-cart">Comprar</button>
                 </div>
             </div>
         </div>
 
-        <div class="product-1">
+        <div class="product-1" data-name="Juego lorem" data-price="500">
             <img src="images/l4.jpg" alt="">
             <div class="product-txt">
                 <h3>Juego lorem</h3>
                 <div class="price">
                     <p>$500</p>
-                    <a href="#" class="btn-2">Comprar</a>
+                    <button class="btn-2 add-to-cart">Comprar</button>
                 </div>
             </div>
         </div>
 
-        <div class="product-1">
+        <div class="product-1" data-name="Juego lorem" data-price="500">
             <img src="images/l5.jpg" alt="">
             <div class="product-txt">
                 <h3>Juego lorem</h3>
                 <div class="price">
                     <p>$500</p>
-                    <a href="#" class="btn-2">Comprar</a>
+                    <button class="btn-2 add-to-cart">Comprar</button>
                 </div>
             </div>
         </div>
 
-        <div class="product-1">
+        <div class="product-1" data-name="Juego lorem" data-price="500">
             <img src="images/l6.jpg" alt="">
             <div class="product-txt">
                 <h3>Juego lorem</h3>
                 <div class="price">
                     <p>$500</p>
-                    <a href="#" class="btn-2">Comprar</a>
+                    <button class="btn-2 add-to-cart">Comprar</button>
                 </div>
             </div>
         </div>
 
-        <div class="product-1">
+        <div class="product-1" data-name="Juego lorem" data-price="500">
             <img src="images/l7.jpg" alt="">
             <div class="product-txt">
                 <h3>Juego lorem</h3>
                 <div class="price">
                     <p>$500</p>
-                    <a href="#" class="btn-2">Comprar</a>
+                    <button class="btn-2 add-to-cart">Comprar</button>
                 </div>
             </div>
         </div>
 
-        <div class="product-1">
+        <div class="product-1" data-name="Juego lorem" data-price="500">
             <img src="images/l8.jpg" alt="">
             <div class="product-txt">
                 <h3>Juego lorem</h3>
                 <div class="price">
                     <p>$500</p>
-                    <a href="#" class="btn-2">Comprar</a>
+                    <button class="btn-2 add-to-cart">Comprar</button>
                 </div>
             </div>
         </div>
 
-        <div class="product-1">
+        <div class="product-1" data-name="Juego lorem" data-price="500">
             <img src="images/l9.jpg" alt="">
             <div class="product-txt">
                 <h3>Juego lorem</h3>
                 <div class="price">
                     <p>$500</p>
-                    <a href="#" class="btn-2">Comprar</a>
+                    <button class="btn-2 add-to-cart">Comprar</button>
                 </div>
             </div>
-
         </div>
     </main>
 
-    <section class="contac container">
+    
 
-        <div class="contac-content">
-            <h3>Suscribete a nuestro blog</h3>
-            <form>
-                <input type="email" placeholder="escribe tu correo">
-                <input type="submit" class="btn-3" value="Enviar">
-            </form>
-        </div>
+    
+<section class="contac container">
+    <div class="contac-content">
+        <h3 class="si">Suscribete a nuestro blog</h3>
+        <form>
+            <input type="email" placeholder="escribe tu correo">
+            <input type="submit" class="btn-3" value="Enviar">
+        </form>
+    </div>
+</section>
 
-    </section>
+<footer class="footer container">
+    <div class="link">
+        <a href="#" class="logo">Logo</a>
+    </div>
+    <div class="link">
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Productos</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </div>
+</footer>
 
+    <script>
+        let cart = [];
 
-    <footer class="footer container">
-        <div class="link">
-            <a href="#" class="logo">Logo</a>
-        </div>
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function () {
+                let product = this.closest('.product-1');
+                let name = product.getAttribute('data-name');
+                let price = parseFloat(product.getAttribute('data-price'));
+                cart.push({ name, price });
+                updateCart();
+            });
+        });
 
-        <div class="link">
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Servicios</a></li>
-                <li><a href="#">Productos</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-        </div>
-    </footer>
+        function updateCart() {
+            let cartItems = document.getElementById('cart-items');
+            let cartTotal = document.getElementById('cart-total');
+            let cartCount = document.getElementById('cart-count');
+            cartItems.innerHTML = '';
+            let total = 0;
+            cart.forEach(item => {
+                let li = document.createElement('li');
+                li.textContent = `${item.name} - $${item.price}`;
+                cartItems.appendChild(li);
+                total += item.price;
+            });
+            cartTotal.textContent = total;
+            cartCount.textContent = cart.length;
+        }
 
+        function clearCart() {
+            cart = [];
+            updateCart();
+        }
+    </script>
 </body>
-
 </html>
