@@ -3,139 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nintendo Consoles</title>
-    <link rel="stylesheet" href="nintendo.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Nintendo Store</title>
+    <link rel="stylesheet" href="xbox.css">
+    <style>
+        .cart {
+            position: relative;
+            display: inline-block;
+        }
+        #cart-icon {
+            font-size: 24px;
+            text-decoration: none;
+            color: #fff;
+            background: #ff6600;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+        .cart-dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            background: white;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 200px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .cart:hover .cart-dropdown {
+            display: block;
+        }
+
+        .cart-dropdown button {
+            background: #ff6600;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Nintendo Consoles</h1>
-        <nav>
-            <a href="index.html" aria-label="Ir a la página principal">Inicio</a>
-            <a href="Xbox.html" aria-label="Explorar consolas Xbox">Xbox</a>
-            <a href="Nintendo.html" aria-label="Explorar consolas Nintendo">Nintendo</a>
-        </nav>
+    <header class="header">
+        <div class="menu container">
+            <a href="#" class="logo">Nintendo Store</a>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="Xbox.html">Xbox</a></li>
+                    <li><a href="Playstation.html">PlayStation</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="cart">
+                <a href="#" id="cart-icon">🛒 <span id="cart-count">0</span></a>
+                <div class="cart-dropdown">
+                    <ul id="cart-items"></ul>
+                    <p>Total: $<span id="cart-total">0</span></p>
+                    <button onclick="clearCart()">Vaciar Carrito</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-content container">
+            <div class="header-txt">
+                <h1>Compra tu <span>Juego</span> <br> Favorito aqui</h1>
+                <p>"Bienvenido a nuestra tienda, el lugar ideal para los
+                     amantes de los videojuegos. Descubre una amplia variedad
+                      de consolas, títulos exclusivos y accesorios de alta calidad.
+                       Ya seas un jugador experimentado o estés comenzando tu aventura,
+                        tenemos todo lo que necesitas para disfrutar de la mejor experiencia.
+                         ¡Explora, elige y lleva tu pasión al siguiente nivel!"
+                </p>
+        </div>
     </header>
 
-    <section class="banner">
-        <h2>La magia de los videojuegos de Nintendo</h2>
-    </section>
+   
+    <main class="product container">
+        <h2>Consolas Nintendo</h2>
+        <div class="product-1" data-name="Nintendo Switch OLED" data-price="500">
+            <img src="img/Nintendo_Switch_OLED.jpg" alt="Nintendo Switch OLED">
+            <h3>Nintendo Switch OLED</h3>
+            <p>$500</p>
+            <button class="btn-2 add-to-cart">Comprar</button>
+        </div>
+        <div class="product-1" data-name="Nintendo Switch Lite" data-price="300">
+            <img src="img/Nintendo_Switch_Lite.jpg" alt="Nintendo Switch Lite">
+            <h3>Nintendo Switch Lite</h3>
+            <p>$300</p>
+            <button class="btn-2 add-to-cart">Comprar</button>
+        </div>
 
-    <main class="content">
-        <h3>Explore Nintendo Consoles</h3>
-        <div class="cards">
-            <article class="card">
-                <img src="img/Nintendo_Switch_OLED.jpg" alt="Nintendo Switch OLED con diseño elegante y pantalla más grande">
-                <div class="card-content">
-                    <h4>Nintendo Switch OLED</h4>
-                    <p>La Nintendo Switch OLED presenta una pantalla más grande y vibrante, con una experiencia de juego en modo portátil y de sobremesa mejorada.</p>
-                </div>
-                <div class="price">
-                    <p>$500</p>
-                    <button class="btn-2 add-to-cart">Comprar</button>
-                </div>
-            </article>
+        <div class="product-1" data-name="Nintendo Switch" data-price="300">
+            <img src="img/Nintendo_Switch.jpg" alt="Nintendo Switch">
+            <h3>Nintendo Switch</h3>
+            <p>$300</p>
+            <button class="btn-2 add-to-cart">Comprar</button>
+        </div>
 
-            <article class="card">
-                <img src="img/Nintendo_Switch_Lite.jpg" alt="Nintendo Switch Lite de color amarillo y diseño compacto">
-                <div class="card-content">
-                    <h4>Nintendo Switch Lite</h4>
-                    <p>La Nintendo Switch Lite es una versión compacta y ligera de la Switch, perfecta para jugar en modo portátil, a un precio más accesible.</p>
-                </div>
-                <div class="price">
-                    <p>$500</p>
-                    <button class="btn-2 add-to-cart">Comprar</button>
-                </div>
-            </article>
+        <div class="product-1" data-name="Wii U" data-price="300">
+            <img src="img/Nintendo Wii U.jpg" alt="Wii U">
+            <h3>Wii U</h3>
+            <p>$300</p>
+            <button class="btn-2 add-to-cart">Comprar</button>
+        </div>
 
-            <article class="card">
-                <img src="img/Nintendo_Switch.jpg" alt="Nintendo Switch con diseño híbrido y Joy-Con desmontables">
-                <div class="card-content">
-                    <h4>Nintendo Switch</h4>
-                    <p>La Nintendo Switch es una consola híbrida, permitiendo jugar en casa o en cualquier lugar gracias a sus Joy-Con desmontables.</p>
-                </div>
-                <div class="price">
-                    <p>$500</p>
-                    <button class="btn-2 add-to-cart">Comprar</button>
-                </div>
-            </article>
+        <div class="product-1" data-name="Wii" data-price="300">
+            <img src="img/Nintendo_WIi.jpg" alt="Wii">
+            <h3>Wii</h3>
+            <p>$300</p>
+            <button class="btn-2 add-to-cart">Comprar</button>
+        </div>
 
-            <article class="card">
-                <img src="img/Nintendo Wii U.jpg" alt="Nintendo Wii U con pantalla táctil en el control">
-                <div class="card-content">
-                    <h4>Wii U</h4>
-                    <p>La Wii U cuenta con un mando con pantalla táctil, ofreciendo nuevas formas de jugar y una gran variedad de títulos exclusivos.</p>
-                </div>
-                <div class="price">
-                    <p>$500</p>
-                    <button class="btn-2 add-to-cart">Comprar</button>
-                </div>
-            </article>
+        <div class="product-1" data-name="Nintendo 64" data-price="300">
+            <img src="img/Nintendo_64.avif" alt="Nintendo 64">
+            <h3>Nintendo 64</h3>
+            <p>$300</p>
+            <button class="btn-2 add-to-cart">Comprar</button>
+        </div>
 
-            <article class="card">
-                <img src="img/Nintendo_WIi.jpg" alt="Nintendo Wii con diseño compacto y controles innovadores">
-                <div class="card-content">
-                    <h4>Wii</h4>
-                    <p>La Nintendo Wii revolucionó los videojuegos con sus controles de movimiento, siendo una de las consolas más populares para toda la familia.</p>
-                </div>
-                <div class="price">
-                    <p>$500</p>
-                    <button class="btn-2 add-to-cart">Comprar</button>
-                </div>
-            </article>
+        <div class="product-1" data-name="GameCube" data-price="300">
+            <img src="img/GameCube.jpg" alt="GameCube">
+            <h3>GameCube</h3>
+            <p>$300</p>
+            <button class="btn-2 add-to-cart">Comprar</button>
+        </div>
 
-            <article class="card">
-                <img src="img/Nintendo_64.avif" alt="Nintendo 64 con diseño clásico y controles ergonómicos">
-                <div class="card-content">
-                    <h4>Nintendo 64</h4>
-                    <p>La Nintendo 64, famosa por sus juegos 3D innovadores, marcó una era en la historia de los videojuegos, con títulos como Super Mario 64 y The Legend of Zelda: Ocarina of Time.</p>
-                </div>
-                <div class="price">
-                    <p>$500</p>
-                    <button class="btn-2 add-to-cart">Comprar</button>
-                </div>
-            </article>
+        <div class="product-1" data-name="Super Nintendo (SNES)" data-price="300">
+            <img src="img/(SNES).jpg" alt="Super Nintendo (SNES)">
+            <h3>Super Nintendo (SNES)</h3>
+            <p>$300</p>
+            <button class="btn-2 add-to-cart">Comprar</button>
+        </div>
 
-            <article class="card">
-                <img src="img/GameCube.jpg" alt="Nintendo GameCube con diseño compacto y colorido">
-                <div class="card-content">
-                    <h4>GameCube</h4>
-                    <p>La GameCube de Nintendo, conocida por su tamaño compacto y su catálogo de juegos exclusivos, es recordada como una de las consolas más divertidas de su época.</p>
-                </div>
-                <div class="price">
-                    <p>$500</p>
-                    <button class="btn-2 add-to-cart">Comprar</button>
-                </div>
-            </article>
-
-            <article class="card">
-                <img src="img/(SNES).jpg" alt="Super Nintendo Entertainment System (SNES)">
-                <div class="card-content">
-                    <h4>Super Nintendo (SNES)</h4>
-                    <p>El Super Nintendo es un clásico de los años 90, con títulos como Super Mario World y The Legend of Zelda: A Link to the Past, que definieron una generación de gamers.</p>
-                </div>
-                <div class="price">
-                    <p>$500</p>
-                    <button class="btn-2 add-to-cart">Comprar</button>
-                </div>
-            </article>
-
-            <article class="card">
-                <img src="img/Super Nintendo.jpeg" alt="Nintendo Entertainment System (NES) clásica">
-                <div class="card-content">
-                    <h4>NES (Nintendo Entertainment System)</h4>
-                    <p>La NES marcó el inicio de la era moderna de los videojuegos, trayendo iconos como Mario Bros, Zelda y Metroid a la vida de millones de jugadores.</p>
-                </div>
-                <div class="price">
-                    <p>$500</p>
-                    <button class="btn-2 add-to-cart">Comprar</button>
-                </div>
-            </article>
+        <div class="product-1" data-name="NES (Nintendo Entertainment System)" data-price="300">
+            <img src="img/Super Nintendo.jpeg" alt="NES (Nintendo Entertainment System)">
+            <h3>NES (Nintendo Entertainment System)</h3>
+            <p>$300</p>
+            <button class="btn-2 add-to-cart">Comprar</button>
         </div>
     </main>
-
-    <footer>
-        <p>&copy; 2025 Gaming World. All Rights Reserved.</p>
+    
+    <section class="contac container">
+        <div class="contac-content">
+            <h3 class="block">Suscríbete a nuestro blog</h3>
+            <form>
+                <input type="email" placeholder="Escribe tu correo">
+                <input type="submit" class="btn-3" value="Enviar">
+            </form>
+        </div>
+    </section>
+    
+    <footer class="footer container">
+        <p>&copy; 2025 Xbox Store. Todos los derechos reservados.</p>
     </footer>
+    
+    <script>
+        let cart = [];
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function () {
+                let product = this.closest('.product-1');
+                let name = product.getAttribute('data-name');
+                let price = parseFloat(product.getAttribute('data-price'));
+                cart.push({ name, price });
+                updateCart();
+            });
+        });
+        function updateCart() {
+            let cartItems = document.getElementById('cart-items');
+            let cartTotal = document.getElementById('cart-total');
+            let cartCount = document.getElementById('cart-count');
+            cartItems.innerHTML = '';
+            let total = 0;
+            cart.forEach(item => {
+                let li = document.createElement('li');
+                li.textContent = `${item.name} - $${item.price}`;
+                cartItems.appendChild(li);
+                total += item.price;
+            });
+            cartTotal.textContent = total;
+            cartCount.textContent = cart.length;
+        }
+        function clearCart() {
+            cart = [];
+            updateCart();
+        }
+    </script>
 </body>
 </html>

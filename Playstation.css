@@ -1,167 +1,212 @@
-/* Reset básico para garantizar la consistencia entre navegadores */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-/* Fuentes */
-body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    color: var(--text-color, #f5f5f5);
-    background-color: var(--background-color, #1a1a1a);
-}
-
-/* Estilos de la cabecera */
-header {
-    background: var(--header-background, linear-gradient(90deg, #0070f3, #2b2d42));
-    color: var(--nav-text-color, white);
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-header h1 {
-    font-size: 2.5rem;
-    letter-spacing: 1px;
-}
-
-nav a {
-    color: var(--nav-text-color, white);
     text-decoration: none;
-    font-weight: 500;
-    margin: 0 15px;
-    text-transform: uppercase;
-    transition: color 0.3s ease;
+    list-style: none;
 }
 
-nav a:hover {
-    color: var(--nav-hover-color, #0070f3);
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #1b1726;
+    color: white;
 }
 
-/* Banner */
-.banner {
-    background-image: url('https://via.placeholder.com/1920x400'); /* Cambia con tu imagen */
-    background-size: cover;
-    background-position: center;
-    color: var(--text-color);
-    padding: 100px 20px;
-    text-align: center;
-}
-
-.banner h2 {
-    font-size: 3rem;
-    font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-
-/* Estilos del contenido principal */
-main {
-    padding: 40px 20px;
+.container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
-h3 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    text-align: center;
-    color: var(--highlight-color, #00b4d8);
-    text-transform: uppercase;
-    border-bottom: 3px solid var(--highlight-color, #00b4d8);
+.header {
+    background-image: url('images/bg.jpg');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    min-height: 80vh;
+    padding: 80px 0;
 }
 
-/* Cards */
-.cards {
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    color: #ff5a2c;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar ul li a {
+    font-size: 18px;
+    color: white;
+    font-weight: 600;
+    padding: 10px 15px;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #ff5a2c;
+}
+
+.cart {
+    position: relative;
+}
+
+#cart-icon {
+    font-size: 20px;
+    color: white;
+    background: #ff5a2c;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.cart-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: white;
+    color: black;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 250px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.cart:hover .cart-dropdown {
+    display: block;
+}
+
+.product {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
-    padding: 20px;
+    padding: 50px 0;
+    text-align: center;
 }
 
-.card {
-    background-color: var(--card-background, #2a2a2a);
+.product-1 {
+    background-color: #2a223a;
+    padding: 15px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.card img {
+.product-1 img {
     width: 100%;
-    height: auto;
+    height: 200px;
     object-fit: cover;
+    border-radius: 5px;
 }
 
-.card-content {
-    padding: 20px;
+.btn-2 {
+    padding: 10px 20px;
+    background-color: #ff5a2c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: box-shadow 0.3s;
 }
 
-.card h4 {
-    font-size: 1.6rem;
-    margin-bottom: 15px;
-    color: var(--text-color);
+.btn-2:hover {
+    box-shadow: 0 0 10px rgba(255, 90, 44, 0.8);
 }
 
-.card p {
-    font-size: 1rem;
-    color: var(--text-color);
-    line-height: 1.5;
+.contact {
+    padding: 50px;
+    text-align: center;
+    background-color: #2a223a;
+    border-radius: 10px;
 }
 
-/* Efecto de hover en las cards */
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+.contact input {
+    padding: 15px;
+    background-color: #3f3456;
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    font-size: 17px;
 }
 
-/* Pie de página */
-footer {
-    background-color: var(--card-background, #2a2a2a);
-    color: var(--text-color);
+.btn-3 {
+    background-color: #ff5a2c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.footer {
+    background-color: #2a223a;
     text-align: center;
     padding: 20px;
-    margin-top: 40px;
-    border-top: 2px solid var(--highlight-color, #00b4d8);
 }
 
-footer p {
-    font-size: 1rem;
+form {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
 }
 
-/* Responsividad */
-@media (max-width: 768px) {
-    .banner h2 {
-        font-size: 2rem;
-    }
+.contact {
+    padding: 150px 300px;
+}
 
-    .cards {
-        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    }
+.contact-content {
+    background-color: #2a223a;
+    text-align: center;
+    padding: 50px;
+    border-radius: 50px;
+}
 
-    h3 {
-        font-size: 1.6rem;
-    }
+input {
+    padding: 18px 25px;
+    background-color: #3f3456;
+    border: 0;
+    border-radius: 25px;
+    outline: none;
+    margin-right: 10px;
+    color: #ffffff;
+    font-size: 17px;
+}
+.block{
+    text-align: center;
+}
 
-    .card h4 {
-        font-size: 1.4rem;
+
+@media (max-width: 991px) {
+    .menu {
+        flex-direction: column;
+        text-align: center;
+    }
+    .navbar ul {
+        flex-direction: column;
+    }
+    .header {
+        min-height: 60vh;
+    }
+    .product {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
 
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 2rem;
-    }
-
-    nav a {
-        font-size: 0.9rem;
-    }
-
-    footer p {
-        font-size: 0.9rem;
-    }
-}
